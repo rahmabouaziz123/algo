@@ -1,0 +1,59 @@
+PROCEDURE swap(VAR x,y:INTEGER)
+VAR
+  z:INTEGER;
+BEGIN
+    z:=x;
+    x:=y;
+    y:=z;
+END
+
+
+ALGORITHM tri-number
+VAR
+   tab1:ARRAY_OF INTEGER;
+ i,j:INTEGER;
+BEGIN
+FOR i FROM 0 TO tab1.lenght-1 STEP 1  DO
+j:=i;
+   WHILE (j> 0 AND tab1[j-1]>tab1[j]) DO
+    swap(tab1[j-1],tab1[j]);
+    j:=j-1
+   END_WHILE
+END_FOR
+ 
+END
+
+//////////////////////////////2 solution avec function/////////////////////////
+FUNCTION swap(VAR x,y:INTEGER) : ARRAY_OF INTEGER
+VAR
+   z:INTEGER;
+   tab2:ARRAY_OF INTEGER;//
+BEGIN
+     z:=x;
+    x:=y;
+    y:=z;
+    tab2[]:={x,y}//
+    RETURN tab2 ;//
+
+END
+
+
+
+
+ALGORITHM tri-number
+VAR
+   tab1:ARRAY_OF INTEGER;
+ i,j:INTEGER;
+ result:ARRAY_OF INTEGER;
+BEGIN
+FOR i FROM 0 TO tab1.lenght-1 STEP 1  DO
+j:=i;
+   WHILE (j> 0 AND tab1[j-1]>tab1[j]) DO
+  result:=  swap(tab1[j-1],tab1[j]);
+    j:=j-1
+   END_WHILE
+END_FOR
+ 
+END
+
+
